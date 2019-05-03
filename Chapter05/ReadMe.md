@@ -54,7 +54,7 @@ I have no idea...
 
 > How would you use the fsync function (Section 3.13) with a standard I/O stream?
 
-You should first call the funtion **fflush** to clear the buffer in order to call system call **write**. And then call **fsync** to write the data into disk.
+You should first call the funtion **fflush** to clear the buffer (done by system call **write**). And then call **fsync** to write the data into disk.
 
 ### Exercise 5.6
 
