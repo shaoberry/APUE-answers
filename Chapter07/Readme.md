@@ -16,9 +16,9 @@ Because the stdout is line buffering, and all the strings output by **printf** i
 
 > Is there any way for a function that is called by main to examine the command-line arguments without (a) passing argc and argv as arguments from main to the function or (b) having main copy argc and argv into global variables?
 
-I think we can use environment variable to store the argc and argv, since every program has access to an environment variable table.
+1. I think we can use environment variable to store the argc and argv, since every program has access to an environment variable table.
 
-The argc and argv are located at the beginning of **main** stack frame, so we can pass the location and parse it.
+2. The argc and argv are located at the beginning of **main** stack frame, so we can pass the location and parse it.
 
 ### Exercise 7.4
 
@@ -52,7 +52,7 @@ The heap and the stack are both dynamically allocated to the program when the pr
 
 > In Section 7.7, the two file sizes (879443 and 8378) don’t equal the sums of their respective text and data sizes. Why?
 
-The binary (i.e. ELF) have it's own meta data and headers besides sections listed by **size**. Considering those extra data, file size is larger than sum of text, data, and bss.
+The binary (i.e. ELF) has it's own meta data and headers besides what's listed by **size**. Considering those extra data, file size is larger than sum of text, data, and bss.
 
 ### Exercise 7.9 
 
