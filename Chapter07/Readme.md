@@ -18,6 +18,8 @@ Because the stdout is line buffering, and all the strings output by **printf** i
 
 I think we can use environment variable to store the argc and argv, since every program has access to an environment variable table.
 
+The argc and argv are located at the beginning of **main** stack frame, so we can pass the location and parse it.
+
 ### Exercise 7.4
 
 > Some UNIX system implementations purposely arrange that, when a program is executed, location 0 in the data segment is not accessible. Why?
@@ -50,7 +52,7 @@ The heap and the stack are both dynamically allocated to the program when the pr
 
 > In Section 7.7, the two file sizes (879443 and 8378) don’t equal the sums of their respective text and data sizes. Why?
 
-Because the two executable files contains several other sections other than **text**, **data** and **bss** sections. So the result of `ls -l` is the size of all sections which must be larger than the sum of only three sections.
+The binary (i.e. ELF) have it's own meta data and headers besides sections listed by **size**. Considering those extra data, file size is larger than sum of text, data, and bss.
 
 ### Exercise 7.9 
 
