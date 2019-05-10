@@ -57,6 +57,17 @@ So if we want to correct it we must make sure the parent process can not be term
 
 If we let the child write its output first, the output can not be mixed.
 
+### Excercise 8.5
+>In the program shown in Figure 8.20, we call execl, specifying the pathname of the interpreter file. If we called execlp instead, specifying a filename of testinterp, and if the directory /home/sar/bin was a path prefix, what would be printed as argv[2] when the program is run?
+
+The program is [here](https://github.com/shaoberry/APUE-answers/blob/master/Chapter08/Exercise_08_05/main.c). it still takes the `pathname` from `exec` call.
+```
+argv[0]: /home/sar/bin/echoarg
+argv[1]: foo
+argv[2]: /home/sar/bin/testinterp
+argv[3]: myarg1
+argv[4]: MY ARG2
+```
 
 ### Exercise 8.6
 
